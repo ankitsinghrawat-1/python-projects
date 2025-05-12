@@ -1,35 +1,23 @@
 import pygame
 import random
 import sys
-
-# Initialize Pygame
 pygame.init()
-
-# Screen dimensions
 SCREEN_WIDTH = 400
 SCREEN_HEIGHT = 600
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Floppy Bird")
-
-# Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 SKY_BLUE = (135, 206, 235)
 GREEN = (0, 200, 0)
 RED = (255, 0, 0)
-
-# Game variables
 FPS = 60
 GRAVITY = 0.5
 BIRD_JUMP_VELOCITY = -10
 PIPE_SPEED = 3
 PIPE_GAP = 150
-PIPE_FREQUENCY = 1500  # milliseconds
-
-# Fonts
+PIPE_FREQUENCY = 1500
 FONT = pygame.font.SysFont("Arial", 32)
-
-# Bird class
 class Bird:
     def __init__(self):
         self.x = 50
@@ -49,8 +37,6 @@ class Bird:
 
     def draw(self, screen):
         pygame.draw.rect(screen, RED, self.rect)
-
-# Pipe class
 class Pipe:
     def __init__(self, x):
         self.x = x
@@ -70,8 +56,6 @@ class Pipe:
 
     def off_screen(self):
         return self.x + self.width < 0
-
-# Main game function
 def main():
     clock = pygame.time.Clock()
     bird = Bird()
@@ -93,41 +77,31 @@ def main():
                 if event.key == pygame.K_SPACE and not game_over:
                     bird.jump()
                 if event.key == pygame.K_r and game_over:
-                    main()  # Restart game
+                    main()
                     return
 
         if not game_over:
             bird.move()
 
-            # Add new pipes
+          
             current_time = pygame.time.get_ticks()
             if current_time - last_pipe_time > PIPE_FREQUENCY:
                 pipes.append(Pipe(SCREEN_WIDTH))
                 last_pipe_time = current_time
-
-            # Move pipes and check for off screen
             for pipe in pipes[:]:
                 pipe.move()
                 if pipe.off_screen():
                     pipes.remove(pipe)
                     score += 1
-
-            # Collision detection
             for pipe in pipes:
                 if bird.rect.colliderect(pipe.top_rect) or bird.rect.colliderect(pipe.bottom_rect):
                     game_over = True
                     break
-
-            # Check if bird hits the ground or flies off screen
             if bird.y > SCREEN_HEIGHT - bird.height or bird.y < 0:
                 game_over = True
-
-        # Draw bird and pipes
         bird.draw(SCREEN)
         for pipe in pipes:
             pipe.draw(SCREEN)
-
-        # Draw score
         score_text = FONT.render(f"Score: {score}", True, BLACK)
         SCREEN.blit(score_text, (10, 10))
 
