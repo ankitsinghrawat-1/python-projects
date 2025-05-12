@@ -5,5 +5,5 @@ def average(*numbers):
     return sum / len(numbers)
 num = input("enter the number:")
 numbers= map(float, num.split())
-c= average(*numbers)
-print(c)
+call= average(*numbers)
+print(call)
