@@ -32,7 +32,12 @@ print('''RULES TO PLAY THE GAME:
 #       15. 10000000
 #       16. 50000000''')
 
-questions = ["1 What is the capital of Australia?",
+
+points = ['1000', '2000', '3000', '5000', '10000', '20000', '40000', '80000', '160000', '320000', '640000',
+           '1250000', '2500000', '5000000', '10000000', '50000000']
+
+
+questions = ["1 What is the capital of Australia?",             
              "2 Which planet is known as the Red Planet?",
              "3 What is the Chemcical Formula for Water?",
              "4 Which color is associated with Peace?",
@@ -43,6 +48,9 @@ questions = ["1 What is the capital of Australia?",
              "9 Which of these is a Professional Football League?",
              "10 If ice tuns into vapor, what is the process called?",
              "11 In total how many ways are there that can a batsman get out?"]
+
+
+
 
 
 L = ['1st ', '2nd', '3rd' ,'4th', '5th', '6th', '7th', '8th', '9th', '10th', '11th']
@@ -65,20 +73,29 @@ options = ['''A Melbourne    B Sydney
 
 answers = ['A', 'C', 'B', 'C', 'C', 'D', 'C', 'A', 'C', 'C', 'B']
 
+answer = ['Melbourne', 'Mars', 'H2O', 'White', 'Pacific Ocean', 'Edison', 'Da Vinci', 'A.R. Rahman', 'ISL', 'Sublimation', '10']
+
 
 cans = ['Congratulations! You got the right answer', "That's the right answer, Congrats", "Bilkul Sahi Jawab",
          "agar aap koi doosra option choose krte to sayad aap nhi jeet pate\n, That's the right answer"]
+
 wans = ["Sorry, but that's the wrong answer", "That's not the right answer, You Lose"]
 
 
-
+p = 0
 for i in range(len(questions)):
     print('Your', L[i], "Question is on your screen:\n", questions[i])
+    q = L[i]
     print("your Options are:\n",options[i])
     ans = input("Choose your option:").strip().upper()
+    a = answers[i]
     if ans == answers[i]:
         print(random.choice(cans))
+        p = int(points[i])
+        print("Your total points are",p)
     else:
         print(random.choice(wans))
         print("Game Over")
+        print("the correct option was", answers[i] , "which is", answer[i])
+        print("you lose, Well PLayed Your score is", p ,"and you were at", q, "question")
         break
