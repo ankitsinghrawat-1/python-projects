@@ -63,12 +63,17 @@ options = ['''A Melbourne    B Sydney
 
 answers = ['C', 'C', 'B', 'C', 'C', 'D', 'C', 'A', 'C', 'C', 'B']
 
-cans = ['Congratulations! You got the right answer', "That's the right answer, Congrats"]
+
+cans = ['Congratulations! You got the right answer', "That's the right answer, Congrats", "Bilkul Sahi Jawab",
+         "agar aap koi doosra option choose krte to sayad aap nhi jeet pate\n, That's the right answer"]
 wans = ["Sorry, but that's the wrong answer", "That's not the right answer, You Lose"]
+
+
+
 for i in range(len(questions)):
     print('Your', L[i], "Question is on your screen:\n", questions[i])
     print("your Options are:\n",options[i])
-    ans = input("Enter your answer:").strip().upper()
+    ans = input("Choose your option:").strip().upper()
     if ans == answers[i]:
         print(random.choice(cans))
     else:
