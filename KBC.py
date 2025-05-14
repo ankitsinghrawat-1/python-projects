@@ -1,4 +1,5 @@
 import random
+
 print('''RULES TO PLAY THE GAME:
       1. There are total 15 questions and 1 special question.
       2. Each question has 4 options.
@@ -8,28 +9,29 @@ print('''RULES TO PLAY THE GAME:
       6. Moving with the game, question difficulty will increase.
       7. You can quit the game at any time.
       8. There are total 3 Checkpoints at 5, 10 and 15 questions.''')
-print('''LIFELINES 
-      1. 50-50: Two wrong options will be removed.
-      2. Ask a friend: You can ask your friend for help.
-      3. Flip the question: You can change the question.''')
+# print('''LIFELINES 
+#       1. 50-50: Two wrong options will be removed.
+#       2. Ask a friend: You can ask your friend for help.
+#       3. Flip the question: You can change the question.''')
 
-print('''PRIZE MONEY FOR EACH QUESTION
-      1. 1000
-      2. 2000
-      3. 3000
-      4. 5000
-      5. 10000
-      6. 20000
-      7. 40000
-      8. 80000
-      9. 160000
-      10. 320000
-      11. 640000
-      12. 1250000
-      13. 2500000
-      14. 5000000
-      15. 10000000
-      16. 50000000''')
+# print('''PRIZE MONEY FOR EACH QUESTION
+#       1. 1000
+#       2. 2000
+#       3. 3000
+#       4. 5000
+#       5. 10000
+#       6. 20000
+#       7. 40000
+#       8. 80000
+#       9. 160000
+#       10. 320000
+#       11. 640000
+#       12. 1250000
+#       13. 2500000
+#       14. 5000000
+#       15. 10000000
+#       16. 50000000''')
+
 questions = ["1 What is the capital of Australia?",
              "2 Which planet is known as the Red Planet?",
              "3 What is the Chemcical Formula for Water?",
@@ -61,7 +63,7 @@ options = ['''A Melbourne    B Sydney
  C 6     D 3''']
 
 
-answers = ['C', 'C', 'B', 'C', 'C', 'D', 'C', 'A', 'C', 'C', 'B']
+answers = ['A', 'C', 'B', 'C', 'C', 'D', 'C', 'A', 'C', 'C', 'B']
 
 
 cans = ['Congratulations! You got the right answer', "That's the right answer, Congrats", "Bilkul Sahi Jawab",
