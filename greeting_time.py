@@ -10,7 +10,7 @@ if ask == "y" or ask == "Y":
         exit()
 if hour >=0 and hour <12:
     print("Good Morning Sir")
-elif hour >=12 and hour <17:
+elif hour >=12 and hour <19:
     print("Good Afternoon Sir")
-elif hour >=17 and hour <23:
-    print("Good Night Sir")        
+elif hour >=119 and hour <23:
+    print("Good Night Sir")
