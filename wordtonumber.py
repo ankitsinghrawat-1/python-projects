@@ -4,3 +4,7 @@ def word_to_number():
     number = w2n.word_to_num(words)
     print(f"The number is: {number}")   
 word_to_number()
+
+
+words = input("Enter a number in words: ")
+print(f"The number is: {w2n.word_to_num(words)}")
