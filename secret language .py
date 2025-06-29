@@ -1,12 +1,15 @@
 import random
 
 
-letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+letters1 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
+     'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+letters2 = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
      'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 
 
 while True:
-     ran = random.sample(letters, 3)
+     ran1 = random.sample(letters1, 3)
+     ran2 = random.sample(letters2, 3)
      # joined = ''.join(ran)
 
 
@@ -22,7 +25,7 @@ while True:
           encoded = []
           for word in words:
                if len(word) >=3:
-                    ntext = ''.join(ran) + word[1:] + word[0] + ''.join(ran)
+                    ntext = ''.join(ran1) + word[1:] + word[0] + ''.join(ran2)
                     encoded.append(ntext)
                elif len(word) <= 2:
                     encoded.append(word[::-1])
