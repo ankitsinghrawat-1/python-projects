@@ -6,4 +6,4 @@ def sumofN(n):
     else:
         return n + sumofN(n - 1)
 
-print(sumofN(10))
+print(sumofN(n))
